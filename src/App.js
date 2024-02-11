@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, {} from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './views/Home'
 import About from './views/About';
 import Projects from './views/Projects';
@@ -39,7 +39,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/arlis" element={<Arlis />} />
           <Route path="/experience" element={<Experience />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */} {/* Original way I was doing it */}
+          <Route path="/" element={<Navigate to="/home" replace />} /> {/*this may be unnecessary */}
         </Routes>
       </div>
     </Router>
