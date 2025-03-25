@@ -1,7 +1,16 @@
+import { typeLine } from '../Common'; // adjust path if needed
+import React, { useEffect } from 'react';
+
 function About() {
+    useEffect(() => {
+          if (window.runCommand) {
+            window.runCommand("About");
+          }
+    }, []);
+
     return (
       <div class="title">
-          <h1 id="typeAbout">Penis</h1>
+          <h1 id="typeAbout">About Me</h1>
       </div>
     );
 }

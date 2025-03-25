@@ -56,7 +56,7 @@ body {
     border-top-right-radius: 10px; /* Adjust as needed */
 }
 
-#typeHome {
+#typeContainer {
     margin-top:2rem;
     margin-left: .5rem;
     color: white;
@@ -75,3 +75,41 @@ body {
 }
 
 /* End of pertinent to prompt area */
+
+.nav-menu {
+    margin: 1rem;
+}
+  
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+  
+.nav-menu li {
+    display: inline;
+}
+  
+.nav-menu a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+  
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* handle blinking cursor */
+
+.type-container div:last-child::after {
+    content: "_";
+    animation: blink 1s step-start 0s infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }

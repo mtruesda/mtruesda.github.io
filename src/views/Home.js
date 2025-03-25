@@ -1,29 +1,27 @@
 import '../css/Home.css';
+import { typeLine } from '../Common'; // adjust path if needed
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
     useEffect(() => {
-        const textHome = "Home";
-        let index = 0;
-        const speed = 100; // Typing speed in milliseconds
-
-        // make a list that this adds to and scrolls--problems for later
-        function typeWriter() {
-            if (index < textHome.length) {
-                let element = document.getElementById("typeHome");
-                if(element) {
-                    element.innerHTML += textHome.charAt(index);
-                    index++;
-                    setTimeout(typeWriter, speed);
-                }
-            }
+        if (window.runCommand) {
+          window.runCommand("Home");
         }
-
-        typeWriter();
-    }, []); // Empty array ensures this effect runs once after initial render
+    }, []);
+    
     
     return (
         <div>
+            <nav className="nav-menu">
+                <ul>
+                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/arlis">Arlis</Link></li>
+                    <li><Link to="/experience">Experience</Link></li>
+                </ul>
+            </nav>
             <fieldset class="container">
                 <legend>Connect with me!</legend>
             </fieldset>
@@ -42,10 +40,6 @@ function Home() {
             <fieldset class="container">
                 <legend>Contacts</legend>
             </fieldset>
-
-            <div class="min-container"><p>Penis 2</p></div>
-                
-            <p>Penis</p>
         </div>
     );
 }
