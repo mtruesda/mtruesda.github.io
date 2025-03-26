@@ -1,6 +1,6 @@
 import '../css/Experience.css';
-import { typeLine } from '../Common'; // adjust path if needed
 import React, { useEffect } from 'react';
+import Menubar from "../Common.js"
 
 function Projects() {
     useEffect(() => {
@@ -8,8 +8,13 @@ function Projects() {
         window.runCommand("Projects");
         }
     }, []);
-    
-    return <h1>Projects Page</h1>;
+
+    return (
+        <div>
+            <Menubar />
+            <h1>Projects</h1>
+        </div>
+    )
 }
 
 export default Projects;

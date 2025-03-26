@@ -3,21 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './views/Home'
 import About from './views/About';
 import Projects from './views/Projects';
-import Arlis from './views/Arlis';
 import Experience from './views/Experience';
 import './css/App.css';
 
-<div id="typeContainer" className="type-container"></div>
-
-function printList(list) {
-  return (
-    list
-  )
-}
-
 function App() {
   //const [showMenu, setShowMenu] = useState(false);
-  const [prompts, setPrompts] = useState([
+  const [prompts] = useState([
     "Home" // First command
   ]);
 
@@ -91,26 +82,25 @@ function App() {
   return (
     <Router>
       <div>
-        <div class="color-change">
-          <div id="prompt">
-              <div id="bar">
-                  <div class="circle" id="close"></div>
-                  <div class="circle" id="minimize"></div>
-                  <div class="circle" id="maximize"></div>
-              </div>
-              <div id="typeContainer" className="type-container"></div>
+        {/* Handles the terminal look */}
+        <div className="color-change"> {/* handles the black background */}
+          <div id="prompt"> {/* handles the box with the text */}
+            <div id="bar"> {/* handles the bar in the top */}
+              <div className="circle" id="close"></div>
+              <div className="circle" id="minimize"></div>
+              <div className="circle" id="maximize"></div>
+            </div>
+            {/* Where all prompt lines get stored. The typing container */}
+            <div id="typeContainer" classNameName="type-container"></div>
           </div>
         </div>
-        
-
+  
         {/* Route Definitions */}
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/arlis" element={<Arlis />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/" element={<Home />} /> */} {/* Original way I was doing it */}
           <Route path="/" element={<Navigate to="/home" replace />} /> {/*this may be unnecessary */}
         </Routes>
       </div>

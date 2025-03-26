@@ -1,6 +1,6 @@
 import '../css/Experience.css';
-import { typeLine } from '../Common'; // adjust path if needed
 import React, { useEffect } from 'react';
+import Menubar from "../Common.js"
 
 function Experience() {
     useEffect(() => {
@@ -11,6 +11,7 @@ function Experience() {
 
     return (
         <div>
+            <Menubar />
             <h1>Experience Page</h1>
         </div>
     );
