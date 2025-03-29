@@ -2,13 +2,14 @@
 
 /* Page header used for name */
 .site-header {
-  width: 100%;
+  width: 100vw;
   padding: 1rem;
   padding-left: 2rem;
   text-align: Left;
   position: relative;
   z-index: 1000;
   min-height: 5vh;
+  box-sizing: border-box;
 }
 
 .site-title {
@@ -25,6 +26,7 @@
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100vw;
+  box-sizing: border-box;
 }
 
 .nav-menu button {
@@ -138,6 +140,10 @@
 }
 
 /* commonly used across pages */
+
+body {
+  overflow-x: hidden; /* this is bad practice--but why the fuck does it have a horizontal scrollbar? */
+}
 
 .min-container {
   background-color: white;
