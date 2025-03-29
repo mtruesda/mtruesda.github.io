@@ -38,3 +38,121 @@ button {
 }
 
 /* --------------------- */
+
+/* Page header used for name */
+.site-header {
+  width: 100%;
+  padding: 1rem;
+  padding-left: 2rem;
+  text-align: Left;
+  position: relative;
+  z-index: 1000;
+}
+
+.site-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* handler for the nav bar with links */
+.nav-menu {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0af;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------- */
+/* Pertinent to prompt area */
+/* -------------------------------------------------------------------- */
+
+.color-change {
+  background-color: black;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 83vh; /* Because header and nav bar. This probably could be better */
+}
+
+.circle {
+  width: 15px;  /* Width of the circle */
+  height: 15px; /* Height of the circle */
+  border-radius: 50%; /* Makes the div circular */
+  margin-left: 8px;
+}
+
+#prompt {
+  height: 60vh;
+  width: 80dvh;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding-top: 0;
+  margin: 0;
+}
+
+#bar {
+  display: flex; /* Example to line up circles */
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+  height: 2rem;
+  text-align: left;
+  align-items: center;
+  background-color:#2f2e2f;
+  border-top-left-radius: 10px; /* Adjust as needed */
+  border-top-right-radius: 10px; /* Adjust as needed */
+}
+
+#typeContainer {
+  margin-top:2rem;
+  margin-left: .5rem;
+  color: white;
+}
+
+#close {
+  background-color: #ff6157;
+}
+
+#minimize {
+  background-color: #fcbd2f;
+}
+
+#maximize {
+  background-color: #28c841;
+}
+
+/* handle blinking cursor */
+
+.type-container div:last-child::after {
+  content: "_";
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

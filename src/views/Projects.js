@@ -1,6 +1,5 @@
 import '../css/Experience.css';
 import React, { useEffect } from 'react';
-import Menubar from "../Common.js"
 
 function Projects() {
     useEffect(() => {
@@ -11,7 +10,6 @@ function Projects() {
 
     return (
         <div>
-            <Menubar />
             <h1>Projects</h1>
         </div>
     )

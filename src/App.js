@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './views/Home'
-import About from './views/About';
-import Projects from './views/Projects';
-import Experience from './views/Experience';
+
 import './css/App.css';
+
+import Home from        './views/Home'
+import About from       './views/About'
+import Projects from    './views/Projects'
+import Experience from  './views/Experience'
+import Menubar from     './Common.js'
 
 function App() {
   //const [showMenu, setShowMenu] = useState(false);
@@ -82,6 +85,10 @@ function App() {
   return (
     <Router>
       <div>
+        <header className="site-header">
+          <h1 className="site-title">Myron Truesdale</h1>
+        </header>
+        <Menubar />
         {/* Handles the terminal look */}
         <div className="color-change"> {/* handles the black background */}
           <div id="prompt"> {/* handles the box with the text */}
