@@ -7,7 +7,7 @@ import Home from        './views/Home'
 import About from       './views/About'
 import Projects from    './views/Projects'
 import Experience from  './views/Experience'
-import Menubar from     './Common.js'
+import { NameHeader, Menubar, Terminal } from './Common.js'
 
 function App() {
   //const [showMenu, setShowMenu] = useState(false);
@@ -50,12 +50,18 @@ function App() {
     const container = document.getElementById("typeContainer");
     if (!container) return;
   
+    const MAX_LINES = 20; /* stop it from continuing past my terminal */
+
     return new Promise((resolve) => {
       // Remove the last (empty) prompt line if it exists
       if (container.lastChild?.innerHTML.trim() === "/users/MyronT/Website/ mtruesda~:$") {
         container.removeChild(container.lastChild);
       }
   
+      if (container.childNodes.length >= MAX_LINES) {
+        container.removeChild(container.firstChild);
+      }
+
       // Create a new prompt line
       const newLine = document.createElement('div');
       container.appendChild(newLine);
@@ -85,22 +91,9 @@ function App() {
   return (
     <Router>
       <div>
-        <header className="site-header">
-          <h1 className="site-title">Myron Truesdale</h1>
-        </header>
+        <NameHeader />
         <Menubar />
-        {/* Handles the terminal look */}
-        <div className="color-change"> {/* handles the black background */}
-          <div id="prompt"> {/* handles the box with the text */}
-            <div id="bar"> {/* handles the bar in the top */}
-              <div className="circle" id="close"></div>
-              <div className="circle" id="minimize"></div>
-              <div className="circle" id="maximize"></div>
-            </div>
-            {/* Where all prompt lines get stored. The typing container */}
-            <div id="typeContainer" classNameName="type-container"></div>
-          </div>
-        </div>
+        <Terminal />
   
         {/* Route Definitions */}
         <Routes>

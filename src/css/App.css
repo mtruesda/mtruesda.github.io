@@ -1,43 +1,4 @@
 /* App.css */
-.menu {
-  position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.menu a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.menu a:hover {
-  background-color: #f1f1f1;
-}
-
-button {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  padding: 16px 20px;
-  margin: 10px 0;
-  border: none;
-  cursor: pointer;
-}
-
-/* scroll related things */
-
-.scroll-watcher {
-  height: 10px;
-  position: fixed;
-  top:0;
-  z-index: 1000;
-  background-color: lime;
-  width: 100%;
-}
-
-/* --------------------- */
 
 /* Page header used for name */
 .site-header {
@@ -47,6 +8,7 @@ button {
   text-align: Left;
   position: relative;
   z-index: 1000;
+  min-height: 5vh;
 }
 
 .site-title {
@@ -65,6 +27,20 @@ button {
   width: 100vw;
 }
 
+.nav-menu button {
+  background: none;
+  border: none;
+  color: #0af;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-menu button:hover {
+  text-decoration: underline;
+}
+
 .nav-menu ul {
   list-style: none;
   padding: 0;
@@ -72,16 +48,6 @@ button {
   display: flex;
   justify-content: left;
   gap: 2rem;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #0af;
-  font-weight: bold;
-}
-
-.nav-menu a:hover {
-  text-decoration: underline;
 }
 
 /* -------------------------------------------------------------------- */
@@ -94,7 +60,8 @@ button {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  min-height: 83vh; /* Because header and nav bar. This probably could be better */
+  min-height: 93vh; /* Because header and nav bar. This probably could be better */
+  box-sizing: border-box;
 }
 
 .circle {
@@ -155,4 +122,31 @@ button {
   50% {
     opacity: 0;
   }
+}
+
+/* handle the main-content and justify auto scroll */
+
+#main-content{
+  scroll-margin-top: 50px;
+  max-width: 80vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* commonly used across pages */
+
+.min-container {
+  background-color: white;
+  position: relative;
+  min-height: 300rem; /* Adjust the value as needed */
+}
+
+.container {
+  border-radius: 10px;
+  border: 2px solid #000;
+  margin: 2rem;
 }
