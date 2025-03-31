@@ -154,5 +154,6 @@ body {
 .container {
   border-radius: 10px;
   border: 2px solid #000;
-  margin: 2rem;
+  margin: 0rem;
+  width: 6rem;
 }

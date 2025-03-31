@@ -1,12 +1,17 @@
-.denmark-image {
-    width: 30rem;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-}
+/* handle favicons */
 
-.germany-image {
-    width: 40rem;
-    height: auto;
-    border-radius: 8px;
-}
+.icon-links {
+    display: flex;
+    gap: 1rem; /* spacing between icons */
+    align-items: center;
+  }
+  
+  .icon {
+    width: 32px;  /* adjust size */
+    height: 32px;
+    transition: transform 0.2s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1); /* subtle hover effect */
+  }

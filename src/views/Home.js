@@ -1,8 +1,10 @@
 import '../css/Home.css';
 import React, { useEffect } from 'react';
-import denmark from '../images/KateMyronDenmark.png';
-import germany from '../images/KateMyronGermany.png';
 
+
+import insta from '../favicons/instagram-50x50.png';
+import linkedin from '../favicons/linkedin50x50.png';
+import github from '../favicons/github-50x50.png';
 
 function Home() {
     useEffect(() => {
@@ -14,13 +16,21 @@ function Home() {
     return (
         <div id='main-content'>
             <h1>Home</h1>
-            
-            <img src="" alt="Me sitting in an H-60"></img>
-            <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image"></img>
-            <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image"></img>
+            <p>I have no idea what should go here</p>
 
             <fieldset class="container">
                 <legend>Connect with me!</legend>
+                <div className="icon-links">
+                    <a href="https://www.linkedin.com/in/myron-truesdale-9402a61b3/">
+                        <img src={linkedin} target="_blank" rel="nonopener noreferrer" alt="LinkedIn favicon" />
+                    </a>
+                    <a href="https://www.github.com/mtruesda">
+                        <img src={github} target="_blank" rel="nonopener noreferrer" alt="GitHub favicon" />
+                    </a>
+                    <a href="https://www.instagram.com/mtruesda">
+                        <img src={insta} target="_blank" rel="nonopener noreferrer" alt="Insta favicon" />
+                    </a>
+                </div>
             </fieldset>
         </div>
     );
