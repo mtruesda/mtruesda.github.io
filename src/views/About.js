@@ -24,16 +24,25 @@ function About() {
         <div style={{ paddingLeft: '2rem' }}>
           <h3>University of Maryland: College Park</h3>
           <p style={{ marginTop: '-1rem', paddingTop: 0 }}>August 2020 - December 2023 | GPA : 3.47</p>
-          <p>hello there</p>
+          <p style={{ marginTop: '-.5rem', paddingTop: 0 }}>
+            <em>Relevant Coursework:</em> Advanced Data Structures, Compilers, Linear Algebra, Computer Systems, Algorithms, Computer Vision, Javascript, Advanced Data Science Techniques and Intro to Machine Learning, Computer and Network Security, Programming Languages and Paradigms, Organization of Programming Languages, Applied Probability and Statistics I/II
+          </p>
         </div>
 
-        <h2>Academic and Professional Interests</h2>
+        <h2>Skills</h2>
         <p></p>
+
+        <h2>Academic and Professional Interests</h2>
+        <p style={{ marginTop: '-.5rem', paddingTop: 0 }}>
+
+        </p>
         
         <h2>Travel</h2>
         <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image"></img>
         <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image"></img>
-        <p></p>
+        <p style={{ marginTop: '-.5rem', paddingTop: 0 }}>
+
+        </p>
         
         <h2>Hobbies</h2>
         <p></p>
