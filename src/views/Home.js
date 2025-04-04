@@ -9,7 +9,7 @@ import github from '../favicons/github-50x50.png';
 function Home() {
     useEffect(() => {
         if (window.runCommand) {
-          window.runCommand("Home");
+          window.runCommand("home");
         }
     }, []);
     

@@ -10,7 +10,7 @@ import React, { useEffect } from 'react';
 function Experience() {
     useEffect(() => {
         if (window.runCommand) {
-        window.runCommand("Experience");
+        window.runCommand("experience");
         }
     }, []);
 

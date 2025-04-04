@@ -11,7 +11,7 @@ import React, { useEffect } from 'react';
 function Projects() {
     useEffect(() => {
         if (window.runCommand) {
-        window.runCommand("Projects");
+        window.runCommand("projects");
         }
     }, []);
 

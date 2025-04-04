@@ -11,9 +11,11 @@ import { NameHeader, Menubar, Terminal } from './Common.js'
 
 function App() {
   //const [showMenu, setShowMenu] = useState(false);
-  const [prompts] = useState([
-    "Home" // First command
-  ]);
+  const currentPath = window.location.pathname;
+  const startingPrompt = currentPath === "/" ? "home" : currentPath.slice(1).toLowerCase();
+
+  const [prompts] = useState([startingPrompt]);
+    
 
   useEffect(() => {
     // Always show the last prompt as empty until replaced
@@ -48,24 +50,36 @@ function App() {
   // Expose method to add new typed line
   window.runCommand = (text) => {
     const container = document.getElementById("typeContainer");
-    if (!container) return;
+    const prompt = document.getElementById("prompt")
+    if (!container || !prompt) return;
   
-    const MAX_LINES = 20; /* stop it from continuing past my terminal */
+    const PROMPT_PREFIX = "/users/MyronT/Website/ mtruesda~:$ ";
+    const lineHeight = 24; // Adjust if your font size is different
+    const promptHeight = prompt.offsetHeight || 400;
+    const MAX_LINES = Math.max(Math.floor(promptHeight / lineHeight), 5);
 
     return new Promise((resolve) => {
-      // Remove the last (empty) prompt line if it exists
-      if (container.lastChild?.innerHTML.trim() === "/users/MyronT/Website/ mtruesda~:$") {
+      // 🔄 Remove the trailing empty line, if it exists
+      if (
+        container.lastChild?.innerHTML.trim() === PROMPT_PREFIX.trim()
+      ) {
         container.removeChild(container.lastChild);
       }
   
-      if (container.childNodes.length >= MAX_LINES) {
-        container.removeChild(container.firstChild);
+      // 💣 Remove oldest lines if exceeding max
+      while (container.childNodes.length >= MAX_LINES) {
+        const first = container.firstChild;
+        if (first && first.nodeType === Node.ELEMENT_NODE) {
+          container.removeChild(first);
+        } else {
+          break;
+        }
       }
-
-      // Create a new prompt line
-      const newLine = document.createElement('div');
+  
+      // ⌨️ Create a new prompt line and start typing
+      const newLine = document.createElement("div");
+      newLine.innerHTML = PROMPT_PREFIX;
       container.appendChild(newLine);
-      newLine.innerHTML = "/users/MyronT/Website/ mtruesda~:$ ";
   
       let index = 0;
       const speed = 30;
@@ -76,17 +90,19 @@ function App() {
           index++;
           setTimeout(typeChar, speed);
         } else {
-          // Once done, add an empty prompt line
-          const nextLine = document.createElement('div');
-          nextLine.innerHTML = "/users/MyronT/Website/ mtruesda~:$ ";
-          container.appendChild(nextLine);
-          resolve(); // Let anything waiting on this know it's done
+          // 🟢 Add a fresh blank prompt line at the end
+          const blankLine = document.createElement("div");
+          blankLine.innerHTML = PROMPT_PREFIX;
+          container.appendChild(blankLine);
+          resolve();
         }
       }
   
       typeChar();
     });
   };
+  
+  
 
   return (
     <Router>

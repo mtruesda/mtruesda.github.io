@@ -157,3 +157,17 @@ body {
   margin: 0rem;
   width: 6rem;
 }
+
+.subheader {
+  margin-top: -1rem;
+  padding-top: 0;
+}
+
+.paragraphText {
+  margin-top: -.5rem;
+  padding-top: 0;
+}
+
+.contentParagraph {
+  padding-left: 2rem;
+}
