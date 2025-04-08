@@ -18,7 +18,7 @@ function Home() {
         <ScrollFx>
             <div id='main-content' class='main-content'>
                 <h1>Home</h1>
-                <p>I have no idea what should go here</p>
+                <p>I made this website to try react and also to put my own website up containing my information!</p>
 
                 <fieldset class="container">
                     <legend>Connect with me!</legend>

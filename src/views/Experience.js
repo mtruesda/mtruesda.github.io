@@ -16,7 +16,7 @@ function Experience() {
 
     return (
         <div id='main-content' class='main-content'>
-            <h1>Experience Page</h1>
+            <h1>Experience</h1>
         </div>
     );
 }
