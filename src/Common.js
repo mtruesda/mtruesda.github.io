@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 
 // html for the header containing the name
 function NameHeader() {
@@ -34,6 +35,7 @@ function Menubar() {
         <li><button onClick={() => handleClick("/about")}>About</button></li>
         <li><button onClick={() => handleClick("/projects")}>Projects</button></li>
         <li><button onClick={() => handleClick("/experience")}>Experience</button></li>
+        <li><button onClick={() => handleClick("/resume")}>Resume</button></li>
       </ul>
     </nav>
   );
@@ -56,4 +58,36 @@ function Terminal() {
   );
 }
 
-export {NameHeader, Menubar, Terminal};
+function ScrollFx({ children }) {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.unobserve(el);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`scroll-fx ${isVisible ? 'visible' : 'hidden'}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+export { NameHeader, Menubar, Terminal, ScrollFx };

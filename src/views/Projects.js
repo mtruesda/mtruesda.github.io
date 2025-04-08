@@ -1,5 +1,6 @@
-import '../css/Experience.css';
+import '../css/Projects.css';
 import React, { useEffect } from 'react';
+import { ScrollFx } from '../Common';
 
 // include bugs, issues, development. Maybe look into how we can visualize git work in here too
 // Website
@@ -17,8 +18,19 @@ function Projects() {
 
     return (
         <div id='main-content'>
-            <h1>Projects</h1>
-        </div>
+            <ScrollFx>
+                <div className="project-container project-left">
+                    <h3>Project One</h3>
+                    <p>Description of a cool project on the left.</p>
+                </div>
+            </ScrollFx>
+            <ScrollFx>
+                <div className="project-container project-right">
+                    <h3>Project Two</h3>
+                    <p>Description of another project, but right-aligned.</p>
+                </div>
+            </ScrollFx>
+        </div>   
     )
 }
 

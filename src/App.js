@@ -7,6 +7,7 @@ import Home from        './views/Home'
 import About from       './views/About'
 import Projects from    './views/Projects'
 import Experience from  './views/Experience'
+import Resume from './views/Resume'
 import { NameHeader, Menubar, Terminal } from './Common.js'
 
 function App() {
@@ -116,6 +117,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Navigate to="/home" replace />} /> {/*this may be unnecessary */}
         </Routes>
