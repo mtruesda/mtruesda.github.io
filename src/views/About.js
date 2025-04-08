@@ -50,7 +50,30 @@ function About() {
 
           <h2>Hobbies</h2>
           <p>
+            I like to spend my time going to the gym, playing video games, spending time out or traveling with friends, or working on my side projects.
+          </p>
+          <br/>
+          <table className="lift-table">
+            <thead>
+              <tr>
+                <th>Bench Max</th>
+                <th>Deadlift Max</th>
+                <th>Squat Max</th>
+                <th>Overhead Press (Standing) Max</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>265</td>
+                <td>455</td>
+                <td>405</td>
+                <td>135</td>
+              </tr>
+            </tbody>
+          </table>
 
+          <p>
+            Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games I like to play indie games with friends or play CS2 or Valorant.
           </p>
 
           <br/>
