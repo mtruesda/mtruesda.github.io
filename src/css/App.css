@@ -29,7 +29,7 @@
   box-sizing: border-box;
 }
 
-.nav-menu button {
+.nav-menu button, a {
   background: none;
   border: none;
   color: #0af;
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 
-.nav-menu button:hover {
+.nav-menu button:hover, a:hover {
   text-decoration: underline;
 }
 
@@ -51,6 +51,7 @@
   justify-content: left;
   gap: 2rem;
 }
+
 
 /* -------------------------------------------------------------------- */
 /* Pertinent to prompt area */

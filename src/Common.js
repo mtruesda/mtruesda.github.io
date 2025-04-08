@@ -28,6 +28,8 @@ function Menubar() {
     }
   };
 
+  const resumeVersion = "MyronTruesdaleResume.pdf"
+
   return (
     <nav className="nav-menu">
       <ul>
@@ -35,7 +37,13 @@ function Menubar() {
         <li><button onClick={() => handleClick("/about")}>About</button></li>
         <li><button onClick={() => handleClick("/projects")}>Projects</button></li>
         <li><button onClick={() => handleClick("/experience")}>Experience</button></li>
-        <li><button onClick={() => handleClick("/resume")}>Resume</button></li>
+        <li>
+          <a href="./assets/Myron_Truesdale_Resume.pdf" 
+            download={resumeVersion}
+            className="nav-link">
+              Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );
