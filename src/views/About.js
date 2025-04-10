@@ -73,7 +73,7 @@ function About() {
           </table>
 
           <p>
-            Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games I like to play indie games with friends or play CS2 or Valorant.
+            Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games I like to play indie games with friends or play CS2 or Valorant. My steam library is 
           </p>
 
           <br/>

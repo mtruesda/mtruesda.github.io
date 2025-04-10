@@ -1,5 +1,20 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+
+async function getRecentlyPlayedGames() {
+  const steamid = 40021087; // public steam identifier from profile url
+  const apiKey = process.env.STEAM_API_KEY;
+  const url = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamid}&format=json`;
+
+  try {
+    const response = await axios.get(url);
+    return response.data.response.games; // List of games
+  } catch (err) {
+    console.error("Steam API error:", err);
+    return null;
+  }
+}
 
 // html for the header containing the name
 function NameHeader() {
