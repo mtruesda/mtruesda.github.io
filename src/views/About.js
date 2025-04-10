@@ -22,10 +22,8 @@ function About() {
 
   useEffect(() => {
     const fetchRecentlyPlayedGames = async () => {
-      const apiKey = process.env.STEAM_API_KEY;
       const steamId = process.env.REACT_APP_STEAM_ID;
-      console.log(apiKey, steamId);
-      const url = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/?key=${apiKey}&steamid=${steamId}&format=json`;
+      const url = `http://localhost:5000/recently-played?steamid=${steamId}`; // fix this
     
       try {
         const response = await axios.get(url);
@@ -74,7 +72,6 @@ function About() {
         <p>
           I like to spend my time going to the gym, playing video games, spending time out or traveling with friends, or working on my side projects.
         </p>
-        <br/>
         <table className="lift-table">
           <thead>
             <tr>
@@ -95,7 +92,9 @@ function About() {
         </table>
 
         <p>
-          Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games I like to play indie games with friends or play CS2 or Valorant. My steam library is 
+          Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games 
+          I like to play small games like Lethal Company, REPO, or VTOL VR with friends or play CS2 or Valorant. I also
+          like to play Minecraft (Java edition) with my girlfriend, Katelyn.
         </p>
         <p>
           {recentGames.length > 0
@@ -106,12 +105,29 @@ function About() {
               </span>
             ))
           : ' Loading games...'}
+          Recent games needs to get populated
         </p>
 
         <br/>
-        <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image" />
+        <div className="flex-container">
+          <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image" />
+          <div className="image-text">
+            <p>
+              In this image we're at the Neptune fountain found at the Frederiksborg Castle in Hillerød, Denmark
+              <br/><br/>
+              The Frederiksborg castle originally served as one of the royal palaces but it now acts as a museum of national history.
+            </p>
+          </div>
+        </div>
         <br/>
-        <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image" />
+        <div className="flex-container">
+            <p>
+              And in this image Katelyn and I visited the Schwerin Castle in Schwerin Germany.
+              <br/><br/>
+              Parts of this castle today serve as the residence of the Mecklenburg-Vorpommern state parliament.
+            </p>
+          <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image" />
+        </div>
       </div>
     </ScrollFx>
   );
