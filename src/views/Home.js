@@ -16,11 +16,11 @@ function Home() {
     
     return (
         <ScrollFx>
-            <div id='main-content' class='main-content'>
+            <div id='main-content' className='main-content'>
                 <h1>Home</h1>
                 <p>I made this website to try react and also to put my own website up containing my information!</p>
 
-                <fieldset class="container">
+                <fieldset className="container">
                     <legend>Connect with me!</legend>
                     <div className="icon-links">
                         <a href="https://www.linkedin.com/in/myron-truesdale-9402a61b3/">
