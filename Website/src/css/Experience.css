@@ -1,0 +1,38 @@
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* handles mobile wrapping */
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-left {
+    font-weight: bold;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .job-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+  
+  .job-tab {
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  .job-right {
+    font-size: 0.9rem;
+    color: #666;
+    flex-shrink: 0;
+    min-width: 100px;
+    text-align: right;
+  }
+  

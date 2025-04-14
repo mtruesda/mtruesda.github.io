@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import './css/App.css';
 
-import Home from        './views/Home'
-import About from       './views/About'
-import Projects from    './views/Projects'
-import Experience from  './views/Experience'
-import Resume from './views/Resume'
+import Home from        './views/Home.js'
+import About from       './views/About.js'
+import Projects from    './views/Projects.js'
+import Experience from  './views/Experience.js'
 import { NameHeader, Menubar, Terminal } from './Common.js'
 
 function App() {

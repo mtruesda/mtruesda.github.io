@@ -6,6 +6,7 @@ import { ScrollFx } from '../Common.js';
 import insta from '../favicons/instagram-50x50.png';
 import linkedin from '../favicons/linkedin50x50.png';
 import github from '../favicons/github-50x50.png';
+import email from '../favicons/email-50x50.png';
 
 function Home() {
     useEffect(() => {
@@ -18,7 +19,10 @@ function Home() {
         <ScrollFx>
             <div id='main-content' className='main-content'>
                 <h1>Home</h1>
-                <p>I made this website to try react and also to put my own website up containing my information!</p>
+                <p>
+                    I made this website to try react and also to put my own website up containing my information! If you have any questions I'm available 
+                    at <a href='mailto:mtruesda@gmail.com'>mtruesda@gmail.com</a>.
+                </p>
 
                 <fieldset className="container">
                     <legend>Connect with me!</legend>
@@ -31,6 +35,9 @@ function Home() {
                         </a>
                         <a href="https://www.instagram.com/mtruesda">
                             <img src={insta} target="_blank" rel="nonopener noreferrer" alt="Insta favicon" />
+                        </a>
+                        <a href="mailto:mtruesda@gmail.com">
+                            <img src={email} target="_blank" rel="nonopener noreferrer" alt="Insta favicon" />
                         </a>
                     </div>
                 </fieldset>
