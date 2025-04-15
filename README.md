@@ -4,9 +4,17 @@
 
 This is how I'm handling api calls to steam because steam gets mad about cross origin.
 
+To run,
+
+`cd Server && node index.js`
+
 # ./Website
 
 This is where the bulk of my website will be located.
+
+To run,
+
+`cd Website && npm start`
 
 # Mischellaneous
 
