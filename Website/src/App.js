@@ -54,7 +54,7 @@ function App() {
     if (!container || !prompt) return;
   
     const PROMPT_PREFIX = "/users/MyronT/Website/ mtruesda~:$ ";
-    const lineHeight = 24; // Adjust if your font size is different
+    const lineHeight = 21; // Adjust if your font size is different
     const promptHeight = prompt.offsetHeight || 400;
     const MAX_LINES = Math.max(Math.floor(promptHeight / lineHeight), 5);
 

@@ -2,13 +2,6 @@ import '../css/Projects.css';
 import React, { useEffect } from 'react';
 import { ScrollFx } from '../Common';
 
-// include bugs, issues, development. Maybe look into how we can visualize git work in here too
-// Website
-// Tree project
-// CV projects -> from class because those are actually done
-// work on your bot?
-// Unreal projects / plugins
-
 function Projects() {
     useEffect(() => {
         if (window.runCommand) {
@@ -28,7 +21,7 @@ function Projects() {
                         were also tested under the same conditions. This project walks through data preparation, model training, and evaluation in a clear, step-by-step 
                         process, making it a concise example of applying machine learning methods to a real dataset.
                         <br/><br/>
-                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see if
+                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
                         you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
                     </p>
                 </div>
@@ -36,7 +29,17 @@ function Projects() {
             <ScrollFx>
                 <div className="project-container project-right">
                     <h3>GMM-Based Soccer Ball Detection</h3>
-                    <p></p>
+                    <p>
+                        As part of a computer vision project, I developed a Python-based perception system for a Nao robot used in Robocup soccer. The objective was to detect 
+                        an orange soccer ball and estimate its distance using only the robot’s onboard cameras. I implemented color classification pipelines using RGB, HSV, and 
+                        YCbCr color spaces, starting with basic thresholding and moving on to using models like single Gaussians and Gaussian Mixture Models (GMMs). 
+                        To do this, I trained on color samples, computing empirical means and covariances, and using Bayes' rule to derive per-pixel color probabilities. 
+                        To improve real-world usability, I explored the effects of lighting and noise, refined classification via a custom color space, and used morphological 
+                        operations to isolate the ball. I finished this project by fitting a parametric model to estimate distance based on image features.
+                        <br/><br/>
+                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
+                    </p>
                 </div>
             </ScrollFx>
             <ScrollFx>
@@ -64,7 +67,13 @@ function Projects() {
                 <div className="project-container project-right">
                     <h3>Racket Compiler</h3>
                     <p>
-
+                        This project was also done as part of a class to demonstrate my understanding of compilers and how they're made along with parsers and interpreters. The project contains a full parser, interpreter, 
+                        and compiler for the Racket programming language and was made using Racket and x86 assembly. In this project, we implemented type-handling mechanisms for type safety
+                        and variable management for dynamic programming. The final product was also able to support lambda functions and other modern functional programming paradigms.
+                        I was able to verify results through the use of the Racket REPL environment to compare results between my own test cases and the output of the official language.
+                        <br/><br/>
+                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
                     </p>
                 </div>
             </ScrollFx>

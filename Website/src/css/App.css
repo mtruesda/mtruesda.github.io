@@ -98,8 +98,8 @@
 }
 
 #typeContainer {
-  margin-top:2rem;
-  margin-left: .5rem;
+  margin: top 0.5rem;
+  margin-left: 0.5rem;
   color: white;
 }
 

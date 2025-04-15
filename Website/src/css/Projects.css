@@ -5,18 +5,23 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  /* Left-aligned container */
-  .project-left {
-    margin-left: 1rem;
-    margin-right: auto;
-    text-align: left;
-  }
-  
-  /* Right-aligned container */
-  .project-right {
-    margin-right: 1rem;
-    margin-left: auto;
-    text-align: right;
-  }
+/* Left-aligned container */
+.project-left {
+  margin-left: 1rem;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Right-aligned container */
+/* smoosh below together and remove h3 option for original look :/ */
+.project-right {
+  margin-right: 1rem;
+  margin-left: auto;
+}
+
+.project-right h3 {
+  text-align: right;
+}
+

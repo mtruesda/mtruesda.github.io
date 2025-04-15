@@ -47,7 +47,7 @@ function About() {
         <h2>Academic and Professional Interests</h2>
         <div className="contentParagraph">
           <p style={{ marginTop: '-.5rem', paddingTop: 0 }}>
-            I'm actively working in aircraft simulation research with a particular focus in developing and integrating image generators and VR along with 
+            I'm actively working in aircraft simulation research with a particular focus in developing and integrating image generators with VR along with 
             other forms of immersive technologies. I'm also currently exploring and applying to graduate programs in Computer Science, with a focus on 
             Computer Vision, Virtual Reality, and Human-Computer Interaction.
           </p>
@@ -106,6 +106,7 @@ function About() {
           I like to play small games like Lethal Company, REPO, or VTOL VR with friends or play CS2 or Valorant. I also
           like to play Minecraft (Java edition) with my girlfriend, Katelyn.
         </p>
+        
         <div>
           <h3>Recently Played Games</h3>
           {recentGames.length > 0 ? (
