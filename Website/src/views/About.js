@@ -55,6 +55,11 @@ function About() {
 
         <h2>Education</h2>
         <div className="contentParagraph">
+          <h3>Georgia Tech</h3>
+          <p className="subheader">August 2025 - Present</p>
+          <p className="paragraphText">
+            <strong>Relevant Coursework:</strong> Robotics AI Techniques
+          </p>
           <h3>University of Maryland: College Park</h3>
           <p className="subheader">August 2020 - December 2023 | GPA : 3.47</p>
           <p className="paragraphText">
