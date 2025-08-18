@@ -1,4 +1,4 @@
-name: CI
+name: CI & Deploy
 
 on:
   push:
@@ -7,25 +7,35 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+# Pages needs these permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+env:
+  BUILD_DIR: Website/build   # or Website/dist
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: ⬢ Setup Node (cache for both subprojects)
+      - name: Setup Node (cache for both subprojects)
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-          # Tell the cache where your lockfiles live
           cache-dependency-path: |
             Server/package-lock.json
             Website/package-lock.json
 
-      # ---- Install deps ----
       - name: Install Server deps
         working-directory: Server
         run: |
@@ -36,30 +46,39 @@ jobs:
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm i; fi
 
-      # ---- Start API in background (optional: only if Website build/tests need it) ----
-      - name: Start API (background)
+      - name: Start API (background)  # remove if your build doesn't need the API
         working-directory: Server
         run: |
           node index.js &
           echo $! > ../api.pid
           sleep 2
 
-      # ---- Build website (use a finite command, not npm start) ----
       - name: Build website
         working-directory: Website
         run: |
-          if npm run | grep -q " build"; then
-            npm run build
-          else
-            echo 'Add a "build" script to Website/package.json (e.g., "vite build" or "react-scripts build")' >&2
-            exit 1
-          fi
+          npm run build
 
-      # ---- Stop API even on failure ----
       - name: Stop API
         if: always()
         run: |
-          if [ -f api.pid ]; then
-            kill "$(cat api.pid)" || true
-            rm -f api.pid
-          fi
+          if [ -f api.pid ]; then kill "$(cat api.pid)" || true; rm -f api.pid; fi
+
+      # Package the built static site for Pages
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
