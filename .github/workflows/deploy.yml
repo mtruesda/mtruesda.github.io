@@ -67,6 +67,11 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # "lazy" answer for 404 page issue
+      - name: Create 404.html SPA fallback
+        working-directory: Website/build   # or Website/dist
+        run: cp index.html 404.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
