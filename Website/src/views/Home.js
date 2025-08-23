@@ -20,8 +20,10 @@ function Home() {
             <div id='main-content' className='main-content'>
                 <h1>Home</h1>
                 <p>
-                    I made this website to try react and also to put my own website up containing my information! If you have any questions I'm available 
-                    at <a href='mailto:mtruesda@gmail.com'>mtruesda@gmail.com</a>.
+                    My name is Myron, I'm a Software Engineer currently working on Computer Vision and XR applications.
+
+                    If you have any questions, you can reach me at
+                    <a href='mailto:mtruesda@gmail.com'>mtruesda@gmail.com</a>.
                 </p>
 
                 <fieldset className="container">
