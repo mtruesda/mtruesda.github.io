@@ -20,10 +20,10 @@ function Home() {
             <div id='main-content' className='main-content'>
                 <h1>Home</h1>
                 <p>
-                    My name is Myron, I'm a Software Engineer currently working on Computer Vision and XR applications.
+                    My name is Myron, I'm a Software Engineer currently working on Computer Vision and XR applications and I
+                    am studying Computer Vision and Graphics with Georgia Tech.
 
-                    If you have any questions, you can reach me at
-                    <a href='mailto:mtruesda@gmail.com'>mtruesda@gmail.com</a>.
+                    If you have any questions, you can reach me at the following links:
                 </p>
 
                 <fieldset className="container">
