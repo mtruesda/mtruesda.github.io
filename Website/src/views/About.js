@@ -98,7 +98,7 @@ function About() {
           </thead>
           <tbody>
             <tr>
-              <td>265 lbs</td>
+              <td>275 lbs</td>
               <td>455 lbs</td>
               <td>405 lbs</td>
               <td>135 lbs</td>
@@ -108,7 +108,7 @@ function About() {
 
         <p>
           Some of my favorite video game series' are Mass Effect and Resident Evil. If we're talking multiplayer games 
-          I like to play small games like Lethal Company, REPO, or VTOL VR with friends or play CS2 or Valorant. I also
+          I like to play small games like Lethal Company, Peak, or VTOL VR with friends or play CS2 or Valorant. I also
           like to play Minecraft (Java edition) with my girlfriend, Katelyn.
         </p>
         

@@ -12,6 +12,20 @@ function Projects() {
     return (
         <div id='main-content'>
             <ScrollFx>
+                <div className="project-container project-right">
+                    <h3>Asteroid Position Prediciton using Kalman Filters</h3>
+                    <p>
+                        I built a small simulated asteroid prediction system that simulates and forecasts orbital trajectories under uncertainty using probabilistic 
+                        state estimation. The project integrates Kalman and Particle Filters to handle noisy measurements, and adaptive time-stepping 
+                        to maintain stability in close encounters. The project uses Bayesian inference, numerical simulation, and matrix-based noise 
+                        modeling to create a robust prediction pipeline.
+                        <br/><br/>
+                        This project was made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
+                    </p>
+                </div>
+            </ScrollFx>
+            <ScrollFx>
                 <div className="project-container project-left">
                     <h3>Titanic Machine Learning Analysis</h3>
                     <p>
@@ -21,7 +35,7 @@ function Projects() {
                         were also tested under the same conditions. This project walks through data preparation, model training, and evaluation in a clear, step-by-step 
                         process, making it a concise example of applying machine learning methods to a real dataset.
                         <br/><br/>
-                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        This project was made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
                         you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
                     </p>
                 </div>
@@ -37,7 +51,7 @@ function Projects() {
                         To improve real-world usability, I explored the effects of lighting and noise, refined classification via a custom color space, and used morphological 
                         operations to isolate the ball. I finished this project by fitting a parametric model to estimate distance based on image features.
                         <br/><br/>
-                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        This project was made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
                         you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
                     </p>
                 </div>
@@ -72,7 +86,7 @@ function Projects() {
                         and variable management for dynamic programming. The final product was also able to support lambda functions and other modern functional programming paradigms.
                         I was able to verify results through the use of the Racket REPL environment to compare results between my own test cases and the output of the official language.
                         <br/><br/>
-                        This project was technically made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        This project was made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
                         you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
                     </p>
                 </div>
