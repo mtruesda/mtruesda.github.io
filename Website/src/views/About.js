@@ -2,8 +2,8 @@ import '../css/About.css'
 import { ScrollFx } from '../Common.js'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import denmark from '../images/KateMyronDenmark.png';
-import germany from '../images/KateMyronGermany.png';
+//import denmark from '../images/KateMyronDenmark.png'; // removed because it felt out of place. -MT TODO: May relocate later 
+//import germany from '../images/KateMyronGermany.png';
 
 // school graduation
 // interests
@@ -130,10 +130,38 @@ function About() {
             <p>Recent games aren't loading.</p>
           )}
         </div>
+
+        <br/>
+
+        <h2>Post Graduation Travel Images</h2>
+
+        {/* // removed because it felt out of place. -MT TODO: May relocate later */}
+        {/* <div className="flex-container">
+          <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image" />
+          <div className="image-text">
+            <p>
+              In this image we're at the Neptune fountain found at the Frederiksborg Castle in Hillerød, Denmark
+              <br/><br/>
+              The Frederiksborg castle originally served as one of the royal palaces but it now acts as a museum of national history.
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div className="flex-container">
+            <p>
+              And in this image Katelyn and I visited the Schwerin Castle in Schwerin Germany.
+              <br/><br/>
+              Parts of this castle today serve as the residence of the Mecklenburg-Vorpommern state parliament.
+            </p>
+          <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image" />
+        </div> */}
+
       </div>
     </ScrollFx>
   );
 }
+
+
 
 export default About;
   
