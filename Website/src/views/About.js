@@ -131,12 +131,11 @@ function About() {
           )}
         </div>
 
-        <br/>
-
-        <h2>Post Graduation Travel Images</h2>
-
         {/* // removed because it felt out of place. -MT TODO: May relocate later */}
-        {/* <div className="flex-container">
+        {/* 
+        <br/>
+        <h2>Post Graduation Travel Images</h2>
+        <div className="flex-container">
           <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image" />
           <div className="image-text">
             <p>
@@ -154,8 +153,8 @@ function About() {
               Parts of this castle today serve as the residence of the Mecklenburg-Vorpommern state parliament.
             </p>
           <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image" />
-        </div> */}
-
+        </div> 
+        */}
       </div>
     </ScrollFx>
   );
