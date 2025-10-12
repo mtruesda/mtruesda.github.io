@@ -30,6 +30,7 @@ function Menubar() {
 
   const resumeVersion = "MyronTruesdaleResume.pdf"
 
+  // I am simply too tired to fix this right now. Come back to this. Resume needs to download properly. Issue made @
   return (
     <nav className="nav-menu">
       <ul>

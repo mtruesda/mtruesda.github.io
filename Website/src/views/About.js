@@ -47,9 +47,8 @@ function About() {
         <h2>Academic and Professional Interests</h2>
         <div className="contentParagraph">
           <p style={{ marginTop: '-.5rem', paddingTop: 0 }}>
-            I'm actively working in aircraft simulation research with a particular focus in developing and integrating image generators with VR along with 
-            other forms of immersive technologies. I'm also currently exploring and applying to graduate programs in Computer Science, with a focus on 
-            Computer Vision, Virtual Reality, and Human-Computer Interaction.
+            I'm actively working in aircraft simulation with a particular focus in developing and integrating image generators with VR along with 
+            other forms of immersive technologies.
           </p>
         </div>
 
@@ -130,30 +129,6 @@ function About() {
           ) : (
             <p>Recent games aren't loading.</p>
           )}
-        </div>
-          
-        <br/>
-
-        <h2>Post Graduation Travel Images</h2>
-
-        <div className="flex-container">
-          <img src={denmark} alt="Katelyn and I at a castle in Denmark" className="denmark-image" />
-          <div className="image-text">
-            <p>
-              In this image we're at the Neptune fountain found at the Frederiksborg Castle in Hillerød, Denmark
-              <br/><br/>
-              The Frederiksborg castle originally served as one of the royal palaces but it now acts as a museum of national history.
-            </p>
-          </div>
-        </div>
-        <br/>
-        <div className="flex-container">
-            <p>
-              And in this image Katelyn and I visited the Schwerin Castle in Schwerin Germany.
-              <br/><br/>
-              Parts of this castle today serve as the residence of the Mecklenburg-Vorpommern state parliament.
-            </p>
-          <img src={germany} alt="Katelyn and I at a castle in Germany" className="germany-image" />
         </div>
       </div>
     </ScrollFx>

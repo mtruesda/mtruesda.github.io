@@ -20,8 +20,8 @@ function Home() {
             <div id='main-content' className='main-content'>
                 <h1>Home</h1>
                 <p>
-                    My name is Myron, I'm a Software Engineer currently working on Computer Vision and XR applications and I
-                    am studying Computer Vision and Graphics with Georgia Tech.
+                    My name is Myron, I'm a Software Engineer currently working on Computer Vision and XR applications. I
+                    am also studying Computer Vision and Graphics at Georgia Tech.
 
                     If you have any questions, you can reach me at the following links:
                 </p>

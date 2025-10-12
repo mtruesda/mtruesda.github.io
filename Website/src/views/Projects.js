@@ -12,6 +12,20 @@ function Projects() {
     return (
         <div id='main-content'>
             <ScrollFx>
+                <div className="project-container project-left">
+                    <h3>Solar System Body Localization using Particle Filters</h3>
+                    <p>
+                        I built a simulated satellite localization system that estimates pose under uncertainty using probabilistic state estimation. 
+                        The project implements a Monte Carlo Particle Filter that fuses gravimeter and photometric illumination readings, with systematic resampling, 
+                        log-domain weight stabilization, and adaptive roughening to maintain particle diversity. A bicycle motion model drives the 
+                        estimation of particle movement.
+                        <br/><br/>
+                        This project was made for school, and therefore for academic reasons I keep that repository private. If you'd like to see it
+                        you can reach out to me and I'll happily provide it. My contact information is on the <a href="/home">home</a> page.
+                    </p>
+                </div>
+            </ScrollFx>
+            <ScrollFx>
                 <div className="project-container project-right">
                     <h3>Asteroid Position Prediciton using Kalman Filters</h3>
                     <p>
