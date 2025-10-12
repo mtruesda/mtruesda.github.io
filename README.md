@@ -8,6 +8,8 @@ To run,
 
 `cd Server && node index.js`
 
+make sure you have a steam key kept in a .env file within Server of the format `REACT_APP_STEAM_API_KEY=XXXXXXXXXXXXXXXXXX`
+
 # ./Website
 
 This is where the bulk of my website will be located.
