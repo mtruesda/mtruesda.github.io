@@ -13,6 +13,7 @@ import axios from 'axios';
 
 function About() {
   const [recentGames, setRecentGames] = useState([]);
+  const [gamesStatus, setGamesStatus] = useState('loading'); // 'loading' | 'empty' | 'error' | 'loaded'
 
   useEffect(() => {
     if (window.runCommand) {
@@ -25,17 +26,21 @@ function About() {
       const steamId = import.meta.env.VITE_STEAM_ID;
       const serverUrl = import.meta.env.VITE_SERVER_URL;
       const url = `${serverUrl}/recently-played?steamid=${steamId}`;
-      console.log("URL LOG 1: ", url)
       try {
         const response = await axios.get(url);
-        if (response.data.response && response.data.response.games) {
-          setRecentGames(response.data.response.games);
+        const games = response.data?.response?.games;
+        if (games && games.length > 0) {
+          setRecentGames(games);
+          setGamesStatus('loaded');
+        } else {
+          setGamesStatus('empty');
         }
       } catch (error) {
         console.error('Error fetching recently played games:', error);
+        setGamesStatus('error');
       }
     };
-  
+
     fetchRecentlyPlayedGames();
   }, []);
   
@@ -114,7 +119,7 @@ function About() {
         
         <div>
           <h3>Recently Played Games</h3>
-          {recentGames.length > 0 ? (
+          {gamesStatus === 'loaded' && (
             <ul style={{ listStyle: "none", padding: 0 }}>
               {recentGames.map((game) => (
                 <li key={game.appid} style={{ marginBottom: "1rem", display: "flex", alignItems: "center" }}>
@@ -127,9 +132,10 @@ function About() {
                 </li>
               ))}
             </ul>
-          ) : (
-            <p>Recent games aren't loading.</p>
           )}
+          {gamesStatus === 'loading' && <p>Loading...</p>}
+          {gamesStatus === 'empty' && <p>No games played in the last 2 weeks.</p>}
+          {gamesStatus === 'error' && <p>Could not reach the games server.</p>}
         </div>
 
         {/* // removed because it felt out of place. -MT TODO: May relocate later */}
