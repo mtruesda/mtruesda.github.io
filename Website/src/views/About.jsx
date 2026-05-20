@@ -23,7 +23,8 @@ function About() {
   useEffect(() => {
     const fetchRecentlyPlayedGames = async () => {
       const steamId = import.meta.env.VITE_STEAM_ID;
-      const url = `http://localhost:8000/recently-played?steamid=${steamId}`;
+      const serverUrl = import.meta.env.VITE_SERVER_URL;
+      const url = `${serverUrl}/recently-played?steamid=${steamId}`;
       console.log("URL LOG 1: ", url)
       try {
         const response = await axios.get(url);
