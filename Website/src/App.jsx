@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import './css/App.css';
 
-import Home from        './views/Home.js'
-import About from       './views/About.js'
-import Projects from    './views/Projects.js'
-import Experience from  './views/Experience.js'
-import { NameHeader, Menubar, Terminal } from './Common.js'
+import Home from        './views/Home.jsx'
+import About from       './views/About.jsx'
+import Projects from    './views/Projects.jsx'
+import Experience from  './views/Experience.jsx'
+import { NameHeader, Menubar, Terminal } from './Common.jsx'
 
 function App() {
   //const [showMenu, setShowMenu] = useState(false);

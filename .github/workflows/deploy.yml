@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BUILD_DIR: Website/build   # or Website/dist
+  BUILD_DIR: Website/dist
 
 jobs:
   build:
@@ -32,44 +32,28 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: |
-            Server/package-lock.json
-            Website/package-lock.json
-
-      - name: Install Server deps
-        working-directory: Server
-        run: |
-          if [ -f package-lock.json ]; then npm ci; else npm i; fi
+          cache-dependency-path: Website/package-lock.json
 
       - name: Install Website deps
         working-directory: Website
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm i; fi
 
-      - name: Start API (background)  # remove if your build doesn't need the API
-        working-directory: Server
-        run: |
-          node index.js &
-          echo $! > ../api.pid
-          sleep 2
-
       - name: Build website
         working-directory: Website
+        env:
+          VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
+          VITE_STEAM_ID: ${{ secrets.VITE_STEAM_ID }}
         run: |
           npm run build
-
-      - name: Stop API
-        if: always()
-        run: |
-          if [ -f api.pid ]; then kill "$(cat api.pid)" || true; rm -f api.pid; fi
 
       # Package the built static site for Pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      # "lazy" answer for 404 page issue
+      # SPA fallback so react-router routes don't 404 on direct load
       - name: Create 404.html SPA fallback
-        working-directory: Website/build   # or Website/dist
+        working-directory: Website/dist
         run: cp index.html 404.html
 
       - name: Upload Pages artifact
