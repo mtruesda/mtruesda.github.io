@@ -28,9 +28,6 @@ function Menubar() {
     }
   };
 
-  const resumeVersion = "MyronTruesdaleResume.pdf"
-
-  // I am simply too tired to fix this right now. Come back to this. Resume needs to download properly. Issue made @
   return (
     <nav className="nav-menu">
       <ul>
@@ -39,8 +36,8 @@ function Menubar() {
         <li><button onClick={() => handleClick("/projects")}>Projects</button></li>
         <li><button onClick={() => handleClick("/experience")}>Experience</button></li>
         <li>
-          <a href="./assets/Myron_Truesdale_Resume.pdf" 
-            download={resumeVersion}
+          <a href="/assets/MyronTruesdaleResume.pdf"
+            download="MyronTruesdaleResume.pdf"
             className="nav-link">
               Resume
           </a>
