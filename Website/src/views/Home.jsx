@@ -1,6 +1,6 @@
 import '../css/Home.css';
 import React, { useEffect } from 'react';
-import { ScrollFx } from '../Common.js';
+import { ScrollFx } from '../Common.jsx';
 
 
 import insta from '../favicons/instagram-50x50.png';

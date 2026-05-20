@@ -1,5 +1,5 @@
 import '../css/About.css'
-import { ScrollFx } from '../Common.js'
+import { ScrollFx } from '../Common.jsx'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 //import denmark from '../images/KateMyronDenmark.png'; // removed because it felt out of place. -MT TODO: May relocate later 
@@ -22,7 +22,7 @@ function About() {
 
   useEffect(() => {
     const fetchRecentlyPlayedGames = async () => {
-      const steamId = process.env.REACT_APP_STEAM_ID;
+      const steamId = import.meta.env.VITE_STEAM_ID;
       const url = `http://localhost:8000/recently-played?steamid=${steamId}`;
       console.log("URL LOG 1: ", url)
       try {
